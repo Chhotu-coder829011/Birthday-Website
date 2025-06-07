@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  top: -70px;
+  left: -15px;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.overlay button {
+  background: #ff4081;
+  color: white;
+  font-size: 20px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 0.9;
+  border-radius: 50%;
+  animation: fall linear infinite;
+  z-index: 100;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.hidden-msg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.birthday-boy {
+  flex: 1 1 300px;
+  max-width: 400px;
+  box-shadow: 0 0 20px #fff5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.birthday-boy img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.card-container {
+  flex: 1 1 300px;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px #fff5;
+  text-align: left;
+}
+
+.message {
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 2em;
+  text-shadow: 0 0 2px #fff;
+  text-align: center;
+}
+
+.msg p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: justify;
+  margin: 20px 0 10px 0;
+}
+
+.msg i {
+  font-size: 28px;
+  float: right;
+  margin-top: 10px;
+}
+
+.star {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px #fff;
+  border-radius: 50%;
+  top: 100%;
+  z-index: 0;
+  opacity: 0.8;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-110vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes riseHeart {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ---------- ✅ Responsive ---------- */
+@media (max-width: 768px) {
+  .hidden-msg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .birthday-boy {
+    max-width: 95%;
+    height: 1200px;
+  }
+
+  .birthday-boy img {
+    height: 500px;
+  }
+  .card-container {
+    max-width: 90%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .msg p {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .msg i {
+    float: none;
+    display: block;
+    margin: 10px auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay h2 {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .overlay button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .msg p {
+    font-size: 0.95em;
+  }
+
+  h1 {
+    font-size: 1.3em;
+  }
+}
